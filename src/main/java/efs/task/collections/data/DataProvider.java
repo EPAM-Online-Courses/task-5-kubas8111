@@ -18,7 +18,10 @@ public class DataProvider {
         List<Town> townList = new ArrayList<>();
         for(String line: Data.baseTownsArray ) {
             String text[] = line.split(DATA_SEPARATOR);
-            townList.add(new Town(text[0], Arrays.stream(text).skip(1).collect(Collectors.toList())));
+            List<String> heroes = new ArrayList<>();
+            heroes.add(text[1].trim());
+            heroes.add(text[2].trim());
+            townList.add(new Town(text[0].trim(), heroes));
         }
         return townList;
     }
@@ -28,7 +31,10 @@ public class DataProvider {
         List<Town> townList = new ArrayList<>();
         for(String line: Data.dlcTownsArray ) {
             String text[] = line.split(DATA_SEPARATOR);
-            townList.add(new Town(text[0], Arrays.stream(text).skip(1).collect(Collectors.toList())));
+            List<String> heroes = new ArrayList<>();
+            heroes.add(text[1].trim());
+            heroes.add(text[2].trim());
+            townList.add(new Town(text[0].trim(), heroes));
         }
 
         return townList;

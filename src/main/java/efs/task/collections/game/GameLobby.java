@@ -28,7 +28,7 @@ public class GameLobby {
     //TODO Dodać miasta i odpowiadających im bohaterów z DLC gry do mapy dostępnych
     // miast - playableTownsWithHeroesList, tylko jeżeli jeszcze się na niej nie znajdują.
     public void enableDLC() {
-        Map<Town, List<Hero>> playableTownsWithHeroesListDLC = mapHeroesToStartingTowns(dataProvider.getDLCTownsList(),dataProvider.getHeroesSet());
+        Map<Town, List<Hero>> playableTownsWithHeroesListDLC = mapHeroesToStartingTowns(dataProvider.getDLCTownsList(),dataProvider.getDLCHeroesSet());
         playableTownsWithHeroesList.putAll(playableTownsWithHeroesListDLC);
     }
 
@@ -36,7 +36,7 @@ public class GameLobby {
     //TODO Usunąć miasta i odpowiadających im bohaterów z DLC gry z mapy dostępnych
     // miast - playableTownsWithHeroesList.
     public void disableDLC() {
-        Map<Town, List<Hero>> playableTownsWithHeroesListDLC = mapHeroesToStartingTowns(dataProvider.getDLCTownsList(),dataProvider.getHeroesSet());
+        Map<Town, List<Hero>> playableTownsWithHeroesListDLC = mapHeroesToStartingTowns(dataProvider.getDLCTownsList(),dataProvider.getDLCHeroesSet());
         playableTownsWithHeroesList.keySet().removeAll(playableTownsWithHeroesListDLC.keySet());
     }
 
